@@ -1,0 +1,22 @@
+<%= form_with(model: subtopic, local: true) do |form| %>
+  <% if subtopic.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(subtopic.errors.count, "error") %> prohibited this subtopic from being saved:</h2>
+
+      <ul>
+      <% subtopic.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :id_topic %>
+    <%= form.number_field :id_topic %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,32 @@
+<%= form_with(model: learnable, local: true) do |form| %>
+  <% if learnable.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(learnable.errors.count, "error") %> prohibited this learnable from being saved:</h2>
+
+      <ul>
+      <% learnable.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :id_coordinator %>
+    <%= form.number_field :id_coordinator %>
+  </div>
+
+  <div class="field">
+    <%= form.label :learnable_name %>
+    <%= form.text_field :learnable_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :max_level %>
+    <%= form.number_field :max_level %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

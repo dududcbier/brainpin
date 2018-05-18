@@ -1,0 +1,2 @@
+class SubtopicsQuestion < ApplicationRecord
+end

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id_student: 1
+  id_material: 1
+  rating: 1
+
+two:
+  id_student: 1
+  id_material: 1
+  rating: 1

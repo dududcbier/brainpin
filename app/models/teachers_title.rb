@@ -1,0 +1,2 @@
+class TeachersTitle < ApplicationRecord
+end

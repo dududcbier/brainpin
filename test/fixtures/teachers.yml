@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id_coordinator: 1
+  office: MyString
+
+two:
+  id_coordinator: 1
+  office: MyString

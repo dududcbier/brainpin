@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Level:</strong>
+  <%= @levels_point.level %>
+</p>
+
+<p>
+  <strong>Id learnable:</strong>
+  <%= @levels_point.id_learnable %>
+</p>
+
+<p>
+  <strong>Points:</strong>
+  <%= @levels_point.points %>
+</p>
+
+<%= link_to 'Edit', edit_levels_point_path(@levels_point) %> |
+<%= link_to 'Back', levels_points_path %>

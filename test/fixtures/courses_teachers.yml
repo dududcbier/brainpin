@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id_course: 1
+  id_teacher: 1
+  start_date: 2018-05-18
+  end_date: 2018-05-18
+
+two:
+  id_course: 1
+  id_teacher: 1
+  start_date: 2018-05-18
+  end_date: 2018-05-18

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  level: 1
+  id_learnable: 1
+  points: 1
+
+two:
+  level: 1
+  id_learnable: 1
+  points: 1

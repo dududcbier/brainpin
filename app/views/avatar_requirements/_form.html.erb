@@ -1,0 +1,32 @@
+<%= form_with(model: avatar_requirement, local: true) do |form| %>
+  <% if avatar_requirement.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(avatar_requirement.errors.count, "error") %> prohibited this avatar_requirement from being saved:</h2>
+
+      <ul>
+      <% avatar_requirement.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :id_avatar %>
+    <%= form.number_field :id_avatar %>
+  </div>
+
+  <div class="field">
+    <%= form.label :id_learnable %>
+    <%= form.number_field :id_learnable %>
+  </div>
+
+  <div class="field">
+    <%= form.label :min_level %>
+    <%= form.number_field :min_level %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

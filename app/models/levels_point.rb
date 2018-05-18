@@ -1,0 +1,2 @@
+class LevelsPoint < ApplicationRecord
+end

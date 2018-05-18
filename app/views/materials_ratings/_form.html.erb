@@ -1,0 +1,32 @@
+<%= form_with(model: materials_rating, local: true) do |form| %>
+  <% if materials_rating.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(materials_rating.errors.count, "error") %> prohibited this materials_rating from being saved:</h2>
+
+      <ul>
+      <% materials_rating.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :id_student %>
+    <%= form.number_field :id_student %>
+  </div>
+
+  <div class="field">
+    <%= form.label :id_material %>
+    <%= form.number_field :id_material %>
+  </div>
+
+  <div class="field">
+    <%= form.label :rating %>
+    <%= form.number_field :rating %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

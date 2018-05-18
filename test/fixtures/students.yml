@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  interest: MyString
+  school_year: 1
+  birth_date: 2018-05-18
+
+two:
+  interest: MyString
+  school_year: 1
+  birth_date: 2018-05-18

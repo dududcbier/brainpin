@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Avatar name:</strong>
+  <%= @avatar.avatar_name %>
+</p>
+
+<p>
+  <strong>Img:</strong>
+  <%= @avatar.img %>
+</p>
+
+<%= link_to 'Edit', edit_avatar_path(@avatar) %> |
+<%= link_to 'Back', avatars_path %>

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Id coordinator:</strong>
+  <%= @learnable.id_coordinator %>
+</p>
+
+<p>
+  <strong>Learnable name:</strong>
+  <%= @learnable.learnable_name %>
+</p>
+
+<p>
+  <strong>Max level:</strong>
+  <%= @learnable.max_level %>
+</p>
+
+<%= link_to 'Edit', edit_learnable_path(@learnable) %> |
+<%= link_to 'Back', learnables_path %>

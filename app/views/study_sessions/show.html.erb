@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @study_session.start_date %>
+</p>
+
+<p>
+  <strong>Id student:</strong>
+  <%= @study_session.id_student %>
+</p>
+
+<p>
+  <strong>Id subtopic:</strong>
+  <%= @study_session.id_subtopic %>
+</p>
+
+<p>
+  <strong>End date:</strong>
+  <%= @study_session.end_date %>
+</p>
+
+<p>
+  <strong>Num correct:</strong>
+  <%= @study_session.num_correct %>
+</p>
+
+<p>
+  <strong>Num questions:</strong>
+  <%= @study_session.num_questions %>
+</p>
+
+<%= link_to 'Edit', edit_study_session_path(@study_session) %> |
+<%= link_to 'Back', study_sessions_path %>

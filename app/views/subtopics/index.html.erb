@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Subtopics</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id topic</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @subtopics.each do |subtopic| %>
+      <tr>
+        <td><%= subtopic.id_topic %></td>
+        <td><%= link_to 'Show', subtopic %></td>
+        <td><%= link_to 'Edit', edit_subtopic_path(subtopic) %></td>
+        <td><%= link_to 'Destroy', subtopic, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Subtopic', new_subtopic_path %>

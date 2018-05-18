@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id_teacher: 1
+  id_subtopic: 1
+  description: MyString
+  url: MyString
+  file: 
+  rating: 9.99
+
+two:
+  id_teacher: 1
+  id_subtopic: 1
+  description: MyString
+  url: MyString
+  file: 
+  rating: 9.99

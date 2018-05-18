@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Id avatar:</strong>
+  <%= @avatar_requirement.id_avatar %>
+</p>
+
+<p>
+  <strong>Id learnable:</strong>
+  <%= @avatar_requirement.id_learnable %>
+</p>
+
+<p>
+  <strong>Min level:</strong>
+  <%= @avatar_requirement.min_level %>
+</p>
+
+<%= link_to 'Edit', edit_avatar_requirement_path(@avatar_requirement) %> |
+<%= link_to 'Back', avatar_requirements_path %>

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id_avatar: 1
+  id_learnable: 1
+  min_level: 1
+
+two:
+  id_avatar: 1
+  id_learnable: 1
+  min_level: 1
