@@ -5,4 +5,5 @@ class QuestionMongo
   field :rating, type: Float
   field :text, type: String
   field :id_registrant, type: Integer
+  field :comments, type: Array
 end
