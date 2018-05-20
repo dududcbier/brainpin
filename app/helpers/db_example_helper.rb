@@ -1,0 +1,2 @@
+module DbExampleHelper
+end
