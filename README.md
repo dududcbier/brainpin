@@ -1,24 +1,18 @@
 # README
+  
+BrainPin is an application built for middle school students, where they can find questions and quality material to help them study.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Dependencies
+  
+* Ruby 2.5.1
+* Rails 5.2
+* Docker Compose
+  
+### Running BrainPin
+  
+To run BrainPin, simply run the following command on the brainpin directory:
+  
+```bash
+$ docker-compose up
+$ docker-compose run web rake db:setup
+```
