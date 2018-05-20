@@ -3,11 +3,11 @@
 one:
   id_course: 1
   id_teacher: 1
-  start_date: 2018-05-18
-  end_date: 2018-05-18
+  start_date: 2018-05-19
+  end_date: 2018-05-19
 
 two:
   id_course: 1
   id_teacher: 1
-  start_date: 2018-05-18
-  end_date: 2018-05-18
+  start_date: 2018-05-19
+  end_date: 2018-05-19

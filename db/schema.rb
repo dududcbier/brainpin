@@ -71,8 +71,11 @@ ActiveRecord::Schema.define(version: 0) do
     t.integer "id_registrant", null: false
   end
 
-# Could not dump table "questions_study_sessions" because of following StandardError
-#   Unknown type 'status_tp' for column 'status'
+  create_table "questions_study_sessions", primary_key: ["id_question", "id_study_session"], force: :cascade do |t|
+    t.string "id_question", limit: 50, null: false
+    t.integer "id_study_session", null: false
+    t.string "status", limit: 15, default: "not answered", null: false
+  end
 
   create_table "registrants", primary_key: "id_user", id: :integer, default: nil, force: :cascade do |t|
   end
@@ -90,13 +93,14 @@ ActiveRecord::Schema.define(version: 0) do
     t.date "birth_date", null: false
   end
 
-  create_table "study_sessions", primary_key: ["start_date", "id_student"], force: :cascade do |t|
+  create_table "study_sessions", primary_key: "id_study_session", id: :serial, force: :cascade do |t|
     t.date "start_date", null: false
     t.integer "id_student", null: false
     t.integer "id_subtopic", null: false
     t.date "end_date"
     t.integer "num_correct"
     t.integer "num_questions"
+    t.index ["start_date", "id_student"], name: "study_sessions_start_date_id_student_key", unique: true
   end
 
   create_table "subtopics", primary_key: "id_learnable", id: :integer, default: nil, force: :cascade do |t|
@@ -146,7 +150,7 @@ ActiveRecord::Schema.define(version: 0) do
   add_foreign_key "materials_ratings", "students", column: "id_student", primary_key: "id_user", name: "materials_ratings_id_student_fkey", on_update: :cascade, on_delete: :cascade
   add_foreign_key "questions", "registrants", column: "id_registrant", primary_key: "id_user", name: "questions_id_registrant_fkey", on_update: :cascade, on_delete: :restrict
   add_foreign_key "questions_study_sessions", "questions", column: "id_question", primary_key: "id_mongo", name: "questions_study_sessions_id_question_fkey", on_update: :cascade, on_delete: :cascade
-  add_foreign_key "questions_study_sessions", "study_sessions", column: "id_student", primary_key: "id_student", name: "questions_study_sessions_id_student_fkey", on_update: :cascade, on_delete: :cascade
+  add_foreign_key "questions_study_sessions", "study_sessions", column: "id_study_session", primary_key: "id_study_session", name: "questions_study_sessions_id_study_session_fkey", on_update: :cascade, on_delete: :cascade
   add_foreign_key "registrants", "users", column: "id_user", primary_key: "id_user", name: "registrants_id_user_fkey", on_update: :cascade, on_delete: :cascade
   add_foreign_key "student_levels", "learnables", column: "id_learnable", primary_key: "id_learnable", name: "student_levels_id_learnable_fkey", on_update: :cascade, on_delete: :cascade
   add_foreign_key "student_levels", "students", column: "id_student", primary_key: "id_user", name: "student_levels_id_student_fkey", on_update: :cascade, on_delete: :cascade

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Id question:</strong>
+  <%= @questions_study_session.id_question %>
+</p>
+
+<p>
+  <strong>Id study session:</strong>
+  <%= @questions_study_session.id_study_session %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @questions_study_session.status %>
+</p>
+
+<%= link_to 'Edit', edit_questions_study_session_path(@questions_study_session) %> |
+<%= link_to 'Back', questions_study_sessions_path %>

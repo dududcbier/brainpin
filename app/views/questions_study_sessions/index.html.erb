@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Questions Study Sessions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id question</th>
+      <th>Id study session</th>
+      <th>Status</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @questions_study_sessions.each do |questions_study_session| %>
+      <tr>
+        <td><%= questions_study_session.id_question %></td>
+        <td><%= questions_study_session.id_study_session %></td>
+        <td><%= questions_study_session.status %></td>
+        <td><%= link_to 'Show', questions_study_session %></td>
+        <td><%= link_to 'Edit', edit_questions_study_session_path(questions_study_session) %></td>
+        <td><%= link_to 'Destroy', questions_study_session, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Questions Study Session', new_questions_study_session_path %>

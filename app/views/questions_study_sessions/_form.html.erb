@@ -1,0 +1,32 @@
+<%= form_with(model: questions_study_session, local: true) do |form| %>
+  <% if questions_study_session.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(questions_study_session.errors.count, "error") %> prohibited this questions_study_session from being saved:</h2>
+
+      <ul>
+      <% questions_study_session.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :id_question %>
+    <%= form.text_field :id_question %>
+  </div>
+
+  <div class="field">
+    <%= form.label :id_study_session %>
+    <%= form.number_field :id_study_session %>
+  </div>
+
+  <div class="field">
+    <%= form.label :status %>
+    <%= form.text_field :status %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

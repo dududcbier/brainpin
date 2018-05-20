@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :students
   resources :student_levels
   resources :registrants
+  resources :questions_study_sessions
   resources :questions
   resources :materials_ratings
   resources :materials
@@ -20,4 +21,5 @@ Rails.application.routes.draw do
   resources :avatars
   resources :avatar_requirements
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  root "users#index"
 end

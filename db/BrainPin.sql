@@ -203,6 +203,7 @@ CREATE TABLE materials_ratings (
 );
 
 CREATE TABLE study_sessions (
+	id_study_session	SERIAL PRIMARY KEY,
 	start_date			DATE NOT NULL,
 	id_student			INT NOT NULL,
 	id_subtopic			INT	NOT NULL,
@@ -215,24 +216,18 @@ CREATE TABLE study_sessions (
 	FOREIGN KEY (id_subtopic) REFERENCES subtopics(id_learnable)
 		ON DELETE RESTRICT
 		ON UPDATE CASCADE,
-	PRIMARY KEY(start_date, id_student)
+	UNIQUE(start_date, id_student)
 );
 
-CREATE TYPE status_tp AS ENUM ('not answered', 'incorrect', 'correct');
-
 CREATE TABLE questions_study_sessions (
-	id_question		VARCHAR(50) NOT NULL,
-	start_date		DATE NOT NULL,
-	id_student		INT NOT NULL,
+	id_question			VARCHAR(50) NOT NULL,
+	id_study_session	INT NOT NULL,
 	status			status_tp NOT NULL DEFAULT 'not answered',
-	FOREIGN KEY (id_student, start_date) REFERENCES study_sessions(id_student, start_date)
+	FOREIGN KEY (id_study_session) REFERENCES study_sessions(id_study_session)
 		ON DELETE CASCADE
 		ON UPDATE CASCADE,
 	FOREIGN KEY (id_question) REFERENCES questions(id_mongo)
 		ON DELETE CASCADE
 		ON UPDATE CASCADE,
-	PRIMARY KEY(id_question, start_date, id_student)
+	PRIMARY KEY(id_question, id_study_session)
 );
-
-
-
