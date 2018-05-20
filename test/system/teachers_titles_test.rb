@@ -14,7 +14,7 @@ class TeachersTitlesTest < ApplicationSystemTestCase
     visit teachers_titles_url
     click_on "New Teachers Title"
 
-    fill_in "Id Teacher", with: @teachers_title.id_teacher
+    fill_in "Teacher", with: @teachers_title.teacher_id
     fill_in "Title", with: @teachers_title.title
     click_on "Create Teachers title"
 
@@ -26,7 +26,7 @@ class TeachersTitlesTest < ApplicationSystemTestCase
     visit teachers_titles_url
     click_on "Edit", match: :first
 
-    fill_in "Id Teacher", with: @teachers_title.id_teacher
+    fill_in "Teacher", with: @teachers_title.teacher_id
     fill_in "Title", with: @teachers_title.title
     click_on "Update Teachers title"
 

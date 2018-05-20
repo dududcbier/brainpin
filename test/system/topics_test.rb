@@ -14,7 +14,7 @@ class TopicsTest < ApplicationSystemTestCase
     visit topics_url
     click_on "New Topic"
 
-    fill_in "Id Course", with: @topic.id_course
+    fill_in "Course", with: @topic.course_id
     click_on "Create Topic"
 
     assert_text "Topic was successfully created"
@@ -25,7 +25,7 @@ class TopicsTest < ApplicationSystemTestCase
     visit topics_url
     click_on "Edit", match: :first
 
-    fill_in "Id Course", with: @topic.id_course
+    fill_in "Course", with: @topic.course_id
     click_on "Update Topic"
 
     assert_text "Topic was successfully updated"

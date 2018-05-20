@@ -17,7 +17,7 @@ class MaterialsRatingsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create materials_rating" do
     assert_difference('MaterialsRating.count') do
-      post materials_ratings_url, params: { materials_rating: { id_material: @materials_rating.id_material, id_student: @materials_rating.id_student, rating: @materials_rating.rating } }
+      post materials_ratings_url, params: { materials_rating: { material_id: @materials_rating.material_id, rating: @materials_rating.rating, student_id: @materials_rating.student_id } }
     end
 
     assert_redirected_to materials_rating_url(MaterialsRating.last)
@@ -34,7 +34,7 @@ class MaterialsRatingsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update materials_rating" do
-    patch materials_rating_url(@materials_rating), params: { materials_rating: { id_material: @materials_rating.id_material, id_student: @materials_rating.id_student, rating: @materials_rating.rating } }
+    patch materials_rating_url(@materials_rating), params: { materials_rating: { material_id: @materials_rating.material_id, rating: @materials_rating.rating, student_id: @materials_rating.student_id } }
     assert_redirected_to materials_rating_url(@materials_rating)
   end
 

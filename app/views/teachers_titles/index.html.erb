@@ -5,7 +5,7 @@
 <table>
   <thead>
     <tr>
-      <th>Id teacher</th>
+      <th>Teacher</th>
       <th>Title</th>
       <th colspan="3"></th>
     </tr>
@@ -14,7 +14,7 @@
   <tbody>
     <% @teachers_titles.each do |teachers_title| %>
       <tr>
-        <td><%= teachers_title.id_teacher %></td>
+        <td><%= teachers_title.teacher %></td>
         <td><%= teachers_title.title %></td>
         <td><%= link_to 'Show', teachers_title %></td>
         <td><%= link_to 'Edit', edit_teachers_title_path(teachers_title) %></td>

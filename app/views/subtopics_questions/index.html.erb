@@ -5,8 +5,8 @@
 <table>
   <thead>
     <tr>
-      <th>Id question</th>
-      <th>Id subtopic</th>
+      <th>Question</th>
+      <th>Subtopic</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -14,8 +14,8 @@
   <tbody>
     <% @subtopics_questions.each do |subtopics_question| %>
       <tr>
-        <td><%= subtopics_question.id_question %></td>
-        <td><%= subtopics_question.id_subtopic %></td>
+        <td><%= subtopics_question.question %></td>
+        <td><%= subtopics_question.subtopic %></td>
         <td><%= link_to 'Show', subtopics_question %></td>
         <td><%= link_to 'Edit', edit_subtopics_question_path(subtopics_question) %></td>
         <td><%= link_to 'Destroy', subtopics_question, method: :delete, data: { confirm: 'Are you sure?' } %></td>

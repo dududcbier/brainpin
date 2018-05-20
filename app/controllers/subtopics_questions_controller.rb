@@ -69,6 +69,6 @@ class SubtopicsQuestionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def subtopics_question_params
-      params.require(:subtopics_question).permit(:id_question, :id_subtopic)
+      params.require(:subtopics_question).permit(:question_id, :subtopic_id)
     end
 end

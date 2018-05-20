@@ -5,8 +5,8 @@
 <table>
   <thead>
     <tr>
-      <th>Id learnable</th>
-      <th>Id student</th>
+      <th>Learnable</th>
+      <th>Student</th>
       <th>Level</th>
       <th>Points</th>
       <th colspan="3"></th>
@@ -16,8 +16,8 @@
   <tbody>
     <% @student_levels.each do |student_level| %>
       <tr>
-        <td><%= student_level.id_learnable %></td>
-        <td><%= student_level.id_student %></td>
+        <td><%= student_level.learnable %></td>
+        <td><%= student_level.student %></td>
         <td><%= student_level.level %></td>
         <td><%= student_level.points %></td>
         <td><%= link_to 'Show', student_level %></td>

@@ -5,7 +5,7 @@
 <table>
   <thead>
     <tr>
-      <th>Id registrant</th>
+      <th>Registrant</th>
       <th>difficulty</th>
       <th>points</th>
       <th>rating</th>
@@ -16,9 +16,9 @@
 
   <tbody>
     <% @questions.each do |question| %>
-      <% question_mongo = @questions_mongo.find(question.id_mongo) %>
+      <% question_mongo = @questions_mongo.find(question.question_id) %>
       <tr>
-        <td><%= question.id_registrant %></td>
+        <td><%= question.registrant %></td>
         <td><%= question_mongo.difficulty %></td>
         <td><%= question_mongo.points %></td>
         <td><%= question_mongo.rating %></td>

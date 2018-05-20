@@ -17,7 +17,7 @@ class StudySessionsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create study_session" do
     assert_difference('StudySession.count') do
-      post study_sessions_url, params: { study_session: { end_date: @study_session.end_date, id_student: @study_session.id_student, id_subtopic: @study_session.id_subtopic, num_correct: @study_session.num_correct, num_questions: @study_session.num_questions, start_date: @study_session.start_date } }
+      post study_sessions_url, params: { study_session: { end_date: @study_session.end_date, num_correct: @study_session.num_correct, num_questions: @study_session.num_questions, start_date: @study_session.start_date, student_id: @study_session.student_id, subtopic_id: @study_session.subtopic_id } }
     end
 
     assert_redirected_to study_session_url(StudySession.last)
@@ -34,7 +34,7 @@ class StudySessionsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update study_session" do
-    patch study_session_url(@study_session), params: { study_session: { end_date: @study_session.end_date, id_student: @study_session.id_student, id_subtopic: @study_session.id_subtopic, num_correct: @study_session.num_correct, num_questions: @study_session.num_questions, start_date: @study_session.start_date } }
+    patch study_session_url(@study_session), params: { study_session: { end_date: @study_session.end_date, num_correct: @study_session.num_correct, num_questions: @study_session.num_questions, start_date: @study_session.start_date, student_id: @study_session.student_id, subtopic_id: @study_session.subtopic_id } }
     assert_redirected_to study_session_url(@study_session)
   end
 

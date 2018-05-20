@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  id_learnable: 1
-  id_student: 1
+  learnable: one
+  student: one
   level: 1
   points: 1
 
 two:
-  id_learnable: 1
-  id_student: 1
+  learnable: two
+  student: two
   level: 1
   points: 1

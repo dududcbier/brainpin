@@ -1,9 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  id_teacher: 1
+  teacher: one
   title: MyString
 
 two:
-  id_teacher: 1
+  teacher: two
   title: MyString

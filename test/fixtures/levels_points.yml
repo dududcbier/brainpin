@@ -2,10 +2,10 @@
 
 one:
   level: 1
-  id_learnable: 1
+  learnable: one
   points: 1
 
 two:
   level: 1
-  id_learnable: 1
+  learnable: two
   points: 1

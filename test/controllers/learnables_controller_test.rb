@@ -17,7 +17,7 @@ class LearnablesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create learnable" do
     assert_difference('Learnable.count') do
-      post learnables_url, params: { learnable: { id_coordinator: @learnable.id_coordinator, learnable_name: @learnable.learnable_name, max_level: @learnable.max_level } }
+      post learnables_url, params: { learnable: { coordinator_id: @learnable.coordinator_id, learnable_name: @learnable.learnable_name, max_level: @learnable.max_level } }
     end
 
     assert_redirected_to learnable_url(Learnable.last)
@@ -34,7 +34,7 @@ class LearnablesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update learnable" do
-    patch learnable_url(@learnable), params: { learnable: { id_coordinator: @learnable.id_coordinator, learnable_name: @learnable.learnable_name, max_level: @learnable.max_level } }
+    patch learnable_url(@learnable), params: { learnable: { coordinator_id: @learnable.coordinator_id, learnable_name: @learnable.learnable_name, max_level: @learnable.max_level } }
     assert_redirected_to learnable_url(@learnable)
   end
 

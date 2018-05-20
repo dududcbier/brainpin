@@ -14,9 +14,9 @@ class UsersTest < ApplicationSystemTestCase
     visit users_url
     click_on "New User"
 
+    fill_in "Avatar", with: @user.avatar_id
     fill_in "Cpf", with: @user.cpf
     fill_in "Email", with: @user.email
-    fill_in "Id Avatar", with: @user.id_avatar
     fill_in "Name", with: @user.name
     fill_in "Password", with: @user.password
     fill_in "Phone", with: @user.phone
@@ -30,9 +30,9 @@ class UsersTest < ApplicationSystemTestCase
     visit users_url
     click_on "Edit", match: :first
 
+    fill_in "Avatar", with: @user.avatar_id
     fill_in "Cpf", with: @user.cpf
     fill_in "Email", with: @user.email
-    fill_in "Id Avatar", with: @user.id_avatar
     fill_in "Name", with: @user.name
     fill_in "Password", with: @user.password
     fill_in "Phone", with: @user.phone

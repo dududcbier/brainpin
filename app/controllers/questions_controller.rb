@@ -5,7 +5,7 @@ class QuestionsController < ApplicationController
   # GET /questions.json
   def index
     @questions = Question.all
-    get_mongo_data
+    @questions_mongo = QuestionMongo.all
   end
 
   # GET /questions/1
@@ -16,7 +16,7 @@ class QuestionsController < ApplicationController
   # GET /questions/new
   def new
     @question = Question.new
-    @questions_mongo = QuestionsMongo.new
+    @question_mongo = QuestionsMongo.new
   end
 
   # GET /questions/1/edit
@@ -72,10 +72,6 @@ class QuestionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def question_params
-      params.require(:question).permit(:id_registrant)
-    end
-
-    def get_mongo_data
-      @questions_mongo = QuestionMongo.all
+      params.require(:question).permit(:registrant_id)
     end
 end

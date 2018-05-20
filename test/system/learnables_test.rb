@@ -14,7 +14,7 @@ class LearnablesTest < ApplicationSystemTestCase
     visit learnables_url
     click_on "New Learnable"
 
-    fill_in "Id Coordinator", with: @learnable.id_coordinator
+    fill_in "Coordinator", with: @learnable.coordinator_id
     fill_in "Learnable Name", with: @learnable.learnable_name
     fill_in "Max Level", with: @learnable.max_level
     click_on "Create Learnable"
@@ -27,7 +27,7 @@ class LearnablesTest < ApplicationSystemTestCase
     visit learnables_url
     click_on "Edit", match: :first
 
-    fill_in "Id Coordinator", with: @learnable.id_coordinator
+    fill_in "Coordinator", with: @learnable.coordinator_id
     fill_in "Learnable Name", with: @learnable.learnable_name
     fill_in "Max Level", with: @learnable.max_level
     click_on "Update Learnable"

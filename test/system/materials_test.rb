@@ -16,9 +16,9 @@ class MaterialsTest < ApplicationSystemTestCase
 
     fill_in "Description", with: @material.description
     fill_in "File", with: @material.file
-    fill_in "Id Subtopic", with: @material.id_subtopic
-    fill_in "Id Teacher", with: @material.id_teacher
     fill_in "Rating", with: @material.rating
+    fill_in "Subtopic", with: @material.subtopic_id
+    fill_in "Teacher", with: @material.teacher_id
     fill_in "Url", with: @material.url
     click_on "Create Material"
 
@@ -32,9 +32,9 @@ class MaterialsTest < ApplicationSystemTestCase
 
     fill_in "Description", with: @material.description
     fill_in "File", with: @material.file
-    fill_in "Id Subtopic", with: @material.id_subtopic
-    fill_in "Id Teacher", with: @material.id_teacher
     fill_in "Rating", with: @material.rating
+    fill_in "Subtopic", with: @material.subtopic_id
+    fill_in "Teacher", with: @material.teacher_id
     fill_in "Url", with: @material.url
     click_on "Update Material"
 

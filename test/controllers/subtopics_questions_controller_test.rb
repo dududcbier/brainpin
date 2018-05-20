@@ -17,7 +17,7 @@ class SubtopicsQuestionsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create subtopics_question" do
     assert_difference('SubtopicsQuestion.count') do
-      post subtopics_questions_url, params: { subtopics_question: { id_question: @subtopics_question.id_question, id_subtopic: @subtopics_question.id_subtopic } }
+      post subtopics_questions_url, params: { subtopics_question: { question_id: @subtopics_question.question_id, subtopic_id: @subtopics_question.subtopic_id } }
     end
 
     assert_redirected_to subtopics_question_url(SubtopicsQuestion.last)
@@ -34,7 +34,7 @@ class SubtopicsQuestionsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update subtopics_question" do
-    patch subtopics_question_url(@subtopics_question), params: { subtopics_question: { id_question: @subtopics_question.id_question, id_subtopic: @subtopics_question.id_subtopic } }
+    patch subtopics_question_url(@subtopics_question), params: { subtopics_question: { question_id: @subtopics_question.question_id, subtopic_id: @subtopics_question.subtopic_id } }
     assert_redirected_to subtopics_question_url(@subtopics_question)
   end
 

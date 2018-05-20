@@ -14,7 +14,7 @@ class TeachersTest < ApplicationSystemTestCase
     visit teachers_url
     click_on "New Teacher"
 
-    fill_in "Id Coordinator", with: @teacher.id_coordinator
+    fill_in "Coordinator", with: @teacher.coordinator_id
     fill_in "Office", with: @teacher.office
     click_on "Create Teacher"
 
@@ -26,7 +26,7 @@ class TeachersTest < ApplicationSystemTestCase
     visit teachers_url
     click_on "Edit", match: :first
 
-    fill_in "Id Coordinator", with: @teacher.id_coordinator
+    fill_in "Coordinator", with: @teacher.coordinator_id
     fill_in "Office", with: @teacher.office
     click_on "Update Teacher"
 

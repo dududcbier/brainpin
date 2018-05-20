@@ -17,7 +17,7 @@ class QuestionsStudySessionsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create questions_study_session" do
     assert_difference('QuestionsStudySession.count') do
-      post questions_study_sessions_url, params: { questions_study_session: { id_question: @questions_study_session.id_question, id_study_session: @questions_study_session.id_study_session, status: @questions_study_session.status } }
+      post questions_study_sessions_url, params: { questions_study_session: { question_id: @questions_study_session.question_id, status: @questions_study_session.status, study_session_id: @questions_study_session.study_session_id } }
     end
 
     assert_redirected_to questions_study_session_url(QuestionsStudySession.last)
@@ -34,7 +34,7 @@ class QuestionsStudySessionsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update questions_study_session" do
-    patch questions_study_session_url(@questions_study_session), params: { questions_study_session: { id_question: @questions_study_session.id_question, id_study_session: @questions_study_session.id_study_session, status: @questions_study_session.status } }
+    patch questions_study_session_url(@questions_study_session), params: { questions_study_session: { question_id: @questions_study_session.question_id, status: @questions_study_session.status, study_session_id: @questions_study_session.study_session_id } }
     assert_redirected_to questions_study_session_url(@questions_study_session)
   end
 

@@ -14,8 +14,8 @@ class AvatarRequirementsTest < ApplicationSystemTestCase
     visit avatar_requirements_url
     click_on "New Avatar Requirement"
 
-    fill_in "Id Avatar", with: @avatar_requirement.id_avatar
-    fill_in "Id Learnable", with: @avatar_requirement.id_learnable
+    fill_in "Avatar", with: @avatar_requirement.avatar_id
+    fill_in "Learnable", with: @avatar_requirement.learnable_id
     fill_in "Min Level", with: @avatar_requirement.min_level
     click_on "Create Avatar requirement"
 
@@ -27,8 +27,8 @@ class AvatarRequirementsTest < ApplicationSystemTestCase
     visit avatar_requirements_url
     click_on "Edit", match: :first
 
-    fill_in "Id Avatar", with: @avatar_requirement.id_avatar
-    fill_in "Id Learnable", with: @avatar_requirement.id_learnable
+    fill_in "Avatar", with: @avatar_requirement.avatar_id
+    fill_in "Learnable", with: @avatar_requirement.learnable_id
     fill_in "Min Level", with: @avatar_requirement.min_level
     click_on "Update Avatar requirement"
 

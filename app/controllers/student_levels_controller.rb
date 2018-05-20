@@ -69,6 +69,6 @@ class StudentLevelsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def student_level_params
-      params.require(:student_level).permit(:id_learnable, :id_student, :level, :points)
+      params.require(:student_level).permit(:learnable_id, :student_id, :level, :points)
     end
 end

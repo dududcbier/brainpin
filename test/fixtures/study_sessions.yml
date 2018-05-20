@@ -1,17 +1,17 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  start_date: 2018-05-19
-  id_student: 1
-  id_subtopic: 1
-  end_date: 2018-05-19
+  start_date: 2018-05-20
+  student: one
+  subtopic: one
+  end_date: 2018-05-20
   num_correct: 1
   num_questions: 1
 
 two:
-  start_date: 2018-05-19
-  id_student: 1
-  id_subtopic: 1
-  end_date: 2018-05-19
+  start_date: 2018-05-20
+  student: two
+  subtopic: two
+  end_date: 2018-05-20
   num_correct: 1
   num_questions: 1

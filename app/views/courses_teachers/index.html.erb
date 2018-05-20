@@ -5,8 +5,8 @@
 <table>
   <thead>
     <tr>
-      <th>Id course</th>
-      <th>Id teacher</th>
+      <th>Course</th>
+      <th>Teacher</th>
       <th>Start date</th>
       <th>End date</th>
       <th colspan="3"></th>
@@ -16,8 +16,8 @@
   <tbody>
     <% @courses_teachers.each do |courses_teacher| %>
       <tr>
-        <td><%= courses_teacher.id_course %></td>
-        <td><%= courses_teacher.id_teacher %></td>
+        <td><%= courses_teacher.course %></td>
+        <td><%= courses_teacher.teacher %></td>
         <td><%= courses_teacher.start_date %></td>
         <td><%= courses_teacher.end_date %></td>
         <td><%= link_to 'Show', courses_teacher %></td>

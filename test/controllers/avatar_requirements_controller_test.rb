@@ -17,7 +17,7 @@ class AvatarRequirementsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create avatar_requirement" do
     assert_difference('AvatarRequirement.count') do
-      post avatar_requirements_url, params: { avatar_requirement: { id_avatar: @avatar_requirement.id_avatar, id_learnable: @avatar_requirement.id_learnable, min_level: @avatar_requirement.min_level } }
+      post avatar_requirements_url, params: { avatar_requirement: { avatar_id: @avatar_requirement.avatar_id, learnable_id: @avatar_requirement.learnable_id, min_level: @avatar_requirement.min_level } }
     end
 
     assert_redirected_to avatar_requirement_url(AvatarRequirement.last)
@@ -34,7 +34,7 @@ class AvatarRequirementsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update avatar_requirement" do
-    patch avatar_requirement_url(@avatar_requirement), params: { avatar_requirement: { id_avatar: @avatar_requirement.id_avatar, id_learnable: @avatar_requirement.id_learnable, min_level: @avatar_requirement.min_level } }
+    patch avatar_requirement_url(@avatar_requirement), params: { avatar_requirement: { avatar_id: @avatar_requirement.avatar_id, learnable_id: @avatar_requirement.learnable_id, min_level: @avatar_requirement.min_level } }
     assert_redirected_to avatar_requirement_url(@avatar_requirement)
   end
 

@@ -69,6 +69,6 @@ class LearnablesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def learnable_params
-      params.require(:learnable).permit(:id_coordinator, :learnable_name, :max_level)
+      params.require(:learnable).permit(:coordinator_id, :learnable_name, :max_level)
     end
 end

@@ -17,7 +17,7 @@ class SubtopicsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create subtopic" do
     assert_difference('Subtopic.count') do
-      post subtopics_url, params: { subtopic: { id_topic: @subtopic.id_topic } }
+      post subtopics_url, params: { subtopic: { topic_id: @subtopic.topic_id } }
     end
 
     assert_redirected_to subtopic_url(Subtopic.last)
@@ -34,7 +34,7 @@ class SubtopicsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update subtopic" do
-    patch subtopic_url(@subtopic), params: { subtopic: { id_topic: @subtopic.id_topic } }
+    patch subtopic_url(@subtopic), params: { subtopic: { topic_id: @subtopic.topic_id } }
     assert_redirected_to subtopic_url(@subtopic)
   end
 

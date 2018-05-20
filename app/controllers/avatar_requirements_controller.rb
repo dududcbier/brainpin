@@ -69,6 +69,6 @@ class AvatarRequirementsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def avatar_requirement_params
-      params.require(:avatar_requirement).permit(:id_avatar, :id_learnable, :min_level)
+      params.require(:avatar_requirement).permit(:avatar_id, :learnable_id, :min_level)
     end
 end

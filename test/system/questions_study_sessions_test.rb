@@ -14,9 +14,9 @@ class QuestionsStudySessionsTest < ApplicationSystemTestCase
     visit questions_study_sessions_url
     click_on "New Questions Study Session"
 
-    fill_in "Id Question", with: @questions_study_session.id_question
-    fill_in "Id Study Session", with: @questions_study_session.id_study_session
+    fill_in "Question", with: @questions_study_session.question_id
     fill_in "Status", with: @questions_study_session.status
+    fill_in "Study Session", with: @questions_study_session.study_session_id
     click_on "Create Questions study session"
 
     assert_text "Questions study session was successfully created"
@@ -27,9 +27,9 @@ class QuestionsStudySessionsTest < ApplicationSystemTestCase
     visit questions_study_sessions_url
     click_on "Edit", match: :first
 
-    fill_in "Id Question", with: @questions_study_session.id_question
-    fill_in "Id Study Session", with: @questions_study_session.id_study_session
+    fill_in "Question", with: @questions_study_session.question_id
     fill_in "Status", with: @questions_study_session.status
+    fill_in "Study Session", with: @questions_study_session.study_session_id
     click_on "Update Questions study session"
 
     assert_text "Questions study session was successfully updated"

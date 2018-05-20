@@ -14,10 +14,10 @@ class StudentLevelsTest < ApplicationSystemTestCase
     visit student_levels_url
     click_on "New Student Level"
 
-    fill_in "Id Learnable", with: @student_level.id_learnable
-    fill_in "Id Student", with: @student_level.id_student
+    fill_in "Learnable", with: @student_level.learnable_id
     fill_in "Level", with: @student_level.level
     fill_in "Points", with: @student_level.points
+    fill_in "Student", with: @student_level.student_id
     click_on "Create Student level"
 
     assert_text "Student level was successfully created"
@@ -28,10 +28,10 @@ class StudentLevelsTest < ApplicationSystemTestCase
     visit student_levels_url
     click_on "Edit", match: :first
 
-    fill_in "Id Learnable", with: @student_level.id_learnable
-    fill_in "Id Student", with: @student_level.id_student
+    fill_in "Learnable", with: @student_level.learnable_id
     fill_in "Level", with: @student_level.level
     fill_in "Points", with: @student_level.points
+    fill_in "Student", with: @student_level.student_id
     click_on "Update Student level"
 
     assert_text "Student level was successfully updated"

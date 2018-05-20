@@ -15,11 +15,11 @@ class StudySessionsTest < ApplicationSystemTestCase
     click_on "New Study Session"
 
     fill_in "End Date", with: @study_session.end_date
-    fill_in "Id Student", with: @study_session.id_student
-    fill_in "Id Subtopic", with: @study_session.id_subtopic
     fill_in "Num Correct", with: @study_session.num_correct
     fill_in "Num Questions", with: @study_session.num_questions
     fill_in "Start Date", with: @study_session.start_date
+    fill_in "Student", with: @study_session.student_id
+    fill_in "Subtopic", with: @study_session.subtopic_id
     click_on "Create Study session"
 
     assert_text "Study session was successfully created"
@@ -31,11 +31,11 @@ class StudySessionsTest < ApplicationSystemTestCase
     click_on "Edit", match: :first
 
     fill_in "End Date", with: @study_session.end_date
-    fill_in "Id Student", with: @study_session.id_student
-    fill_in "Id Subtopic", with: @study_session.id_subtopic
     fill_in "Num Correct", with: @study_session.num_correct
     fill_in "Num Questions", with: @study_session.num_questions
     fill_in "Start Date", with: @study_session.start_date
+    fill_in "Student", with: @study_session.student_id
+    fill_in "Subtopic", with: @study_session.subtopic_id
     click_on "Update Study session"
 
     assert_text "Study session was successfully updated"

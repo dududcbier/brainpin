@@ -14,8 +14,8 @@ class SubtopicsQuestionsTest < ApplicationSystemTestCase
     visit subtopics_questions_url
     click_on "New Subtopics Question"
 
-    fill_in "Id Question", with: @subtopics_question.id_question
-    fill_in "Id Subtopic", with: @subtopics_question.id_subtopic
+    fill_in "Question", with: @subtopics_question.question_id
+    fill_in "Subtopic", with: @subtopics_question.subtopic_id
     click_on "Create Subtopics question"
 
     assert_text "Subtopics question was successfully created"
@@ -26,8 +26,8 @@ class SubtopicsQuestionsTest < ApplicationSystemTestCase
     visit subtopics_questions_url
     click_on "Edit", match: :first
 
-    fill_in "Id Question", with: @subtopics_question.id_question
-    fill_in "Id Subtopic", with: @subtopics_question.id_subtopic
+    fill_in "Question", with: @subtopics_question.question_id
+    fill_in "Subtopic", with: @subtopics_question.subtopic_id
     click_on "Update Subtopics question"
 
     assert_text "Subtopics question was successfully updated"

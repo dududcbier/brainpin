@@ -5,7 +5,7 @@
 <table>
   <thead>
     <tr>
-      <th>Id coordinator</th>
+      <th>Coordinator</th>
       <th>Office</th>
       <th colspan="3"></th>
     </tr>
@@ -14,7 +14,7 @@
   <tbody>
     <% @teachers.each do |teacher| %>
       <tr>
-        <td><%= teacher.id_coordinator %></td>
+        <td><%= teacher.coordinator %></td>
         <td><%= teacher.office %></td>
         <td><%= link_to 'Show', teacher %></td>
         <td><%= link_to 'Edit', edit_teacher_path(teacher) %></td>

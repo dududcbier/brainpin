@@ -69,6 +69,6 @@ class StudySessionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def study_session_params
-      params.require(:study_session).permit(:start_date, :id_student, :id_subtopic, :end_date, :num_correct, :num_questions)
+      params.require(:study_session).permit(:start_date, :student_id, :subtopic_id, :end_date, :num_correct, :num_questions)
     end
 end

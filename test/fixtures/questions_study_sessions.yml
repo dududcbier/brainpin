@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  id_question: MyString
-  id_study_session: 1
+  question: one
+  study_session: one
   status: MyString
 
 two:
-  id_question: MyString
-  id_study_session: 1
+  question: two
+  study_session: two
   status: MyString

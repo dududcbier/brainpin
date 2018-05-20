@@ -1,7 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  id_avatar: 1
+  avatar: one
   name: MyString
   password: MyString
   phone: MyString
@@ -9,7 +9,7 @@ one:
   email: MyString
 
 two:
-  id_avatar: 1
+  avatar: two
   name: MyString
   password: MyString
   phone: MyString

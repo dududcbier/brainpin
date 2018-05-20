@@ -17,7 +17,7 @@ class StudentLevelsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create student_level" do
     assert_difference('StudentLevel.count') do
-      post student_levels_url, params: { student_level: { id_learnable: @student_level.id_learnable, id_student: @student_level.id_student, level: @student_level.level, points: @student_level.points } }
+      post student_levels_url, params: { student_level: { learnable_id: @student_level.learnable_id, level: @student_level.level, points: @student_level.points, student_id: @student_level.student_id } }
     end
 
     assert_redirected_to student_level_url(StudentLevel.last)
@@ -34,7 +34,7 @@ class StudentLevelsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update student_level" do
-    patch student_level_url(@student_level), params: { student_level: { id_learnable: @student_level.id_learnable, id_student: @student_level.id_student, level: @student_level.level, points: @student_level.points } }
+    patch student_level_url(@student_level), params: { student_level: { learnable_id: @student_level.learnable_id, level: @student_level.level, points: @student_level.points, student_id: @student_level.student_id } }
     assert_redirected_to student_level_url(@student_level)
   end
 

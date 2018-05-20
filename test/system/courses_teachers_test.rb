@@ -14,10 +14,10 @@ class CoursesTeachersTest < ApplicationSystemTestCase
     visit courses_teachers_url
     click_on "New Courses Teacher"
 
+    fill_in "Course", with: @courses_teacher.course_id
     fill_in "End Date", with: @courses_teacher.end_date
-    fill_in "Id Course", with: @courses_teacher.id_course
-    fill_in "Id Teacher", with: @courses_teacher.id_teacher
     fill_in "Start Date", with: @courses_teacher.start_date
+    fill_in "Teacher", with: @courses_teacher.teacher_id
     click_on "Create Courses teacher"
 
     assert_text "Courses teacher was successfully created"
@@ -28,10 +28,10 @@ class CoursesTeachersTest < ApplicationSystemTestCase
     visit courses_teachers_url
     click_on "Edit", match: :first
 
+    fill_in "Course", with: @courses_teacher.course_id
     fill_in "End Date", with: @courses_teacher.end_date
-    fill_in "Id Course", with: @courses_teacher.id_course
-    fill_in "Id Teacher", with: @courses_teacher.id_teacher
     fill_in "Start Date", with: @courses_teacher.start_date
+    fill_in "Teacher", with: @courses_teacher.teacher_id
     click_on "Update Courses teacher"
 
     assert_text "Courses teacher was successfully updated"

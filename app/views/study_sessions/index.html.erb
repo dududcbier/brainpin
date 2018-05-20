@@ -6,8 +6,8 @@
   <thead>
     <tr>
       <th>Start date</th>
-      <th>Id student</th>
-      <th>Id subtopic</th>
+      <th>Student</th>
+      <th>Subtopic</th>
       <th>End date</th>
       <th>Num correct</th>
       <th>Num questions</th>
@@ -19,8 +19,8 @@
     <% @study_sessions.each do |study_session| %>
       <tr>
         <td><%= study_session.start_date %></td>
-        <td><%= study_session.id_student %></td>
-        <td><%= study_session.id_subtopic %></td>
+        <td><%= study_session.student %></td>
+        <td><%= study_session.subtopic %></td>
         <td><%= study_session.end_date %></td>
         <td><%= study_session.num_correct %></td>
         <td><%= study_session.num_questions %></td>

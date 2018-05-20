@@ -14,7 +14,7 @@ class SubtopicsTest < ApplicationSystemTestCase
     visit subtopics_url
     click_on "New Subtopic"
 
-    fill_in "Id Topic", with: @subtopic.id_topic
+    fill_in "Topic", with: @subtopic.topic_id
     click_on "Create Subtopic"
 
     assert_text "Subtopic was successfully created"
@@ -25,7 +25,7 @@ class SubtopicsTest < ApplicationSystemTestCase
     visit subtopics_url
     click_on "Edit", match: :first
 
-    fill_in "Id Topic", with: @subtopic.id_topic
+    fill_in "Topic", with: @subtopic.topic_id
     click_on "Update Subtopic"
 
     assert_text "Subtopic was successfully updated"

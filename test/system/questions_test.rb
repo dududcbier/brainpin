@@ -14,7 +14,7 @@ class QuestionsTest < ApplicationSystemTestCase
     visit questions_url
     click_on "New Question"
 
-    fill_in "Id Registrant", with: @question.id_registrant
+    fill_in "Registrant", with: @question.registrant_id
     click_on "Create Question"
 
     assert_text "Question was successfully created"
@@ -25,7 +25,7 @@ class QuestionsTest < ApplicationSystemTestCase
     visit questions_url
     click_on "Edit", match: :first
 
-    fill_in "Id Registrant", with: @question.id_registrant
+    fill_in "Registrant", with: @question.registrant_id
     click_on "Update Question"
 
     assert_text "Question was successfully updated"

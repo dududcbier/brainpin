@@ -69,6 +69,6 @@ class LevelsPointsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def levels_point_params
-      params.require(:levels_point).permit(:level, :id_learnable, :points)
+      params.require(:levels_point).permit(:level, :learnable_id, :points)
     end
 end

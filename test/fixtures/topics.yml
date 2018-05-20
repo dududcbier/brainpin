@@ -1,7 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  id_course: 1
+  course: one
 
 two:
-  id_course: 1
+  course: two

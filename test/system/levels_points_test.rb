@@ -14,7 +14,7 @@ class LevelsPointsTest < ApplicationSystemTestCase
     visit levels_points_url
     click_on "New Levels Point"
 
-    fill_in "Id Learnable", with: @levels_point.id_learnable
+    fill_in "Learnable", with: @levels_point.learnable_id
     fill_in "Level", with: @levels_point.level
     fill_in "Points", with: @levels_point.points
     click_on "Create Levels point"
@@ -27,7 +27,7 @@ class LevelsPointsTest < ApplicationSystemTestCase
     visit levels_points_url
     click_on "Edit", match: :first
 
-    fill_in "Id Learnable", with: @levels_point.id_learnable
+    fill_in "Learnable", with: @levels_point.learnable_id
     fill_in "Level", with: @levels_point.level
     fill_in "Points", with: @levels_point.points
     click_on "Update Levels point"

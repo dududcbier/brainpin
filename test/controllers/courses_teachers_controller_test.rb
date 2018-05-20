@@ -17,7 +17,7 @@ class CoursesTeachersControllerTest < ActionDispatch::IntegrationTest
 
   test "should create courses_teacher" do
     assert_difference('CoursesTeacher.count') do
-      post courses_teachers_url, params: { courses_teacher: { end_date: @courses_teacher.end_date, id_course: @courses_teacher.id_course, id_teacher: @courses_teacher.id_teacher, start_date: @courses_teacher.start_date } }
+      post courses_teachers_url, params: { courses_teacher: { course_id: @courses_teacher.course_id, end_date: @courses_teacher.end_date, start_date: @courses_teacher.start_date, teacher_id: @courses_teacher.teacher_id } }
     end
 
     assert_redirected_to courses_teacher_url(CoursesTeacher.last)
@@ -34,7 +34,7 @@ class CoursesTeachersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update courses_teacher" do
-    patch courses_teacher_url(@courses_teacher), params: { courses_teacher: { end_date: @courses_teacher.end_date, id_course: @courses_teacher.id_course, id_teacher: @courses_teacher.id_teacher, start_date: @courses_teacher.start_date } }
+    patch courses_teacher_url(@courses_teacher), params: { courses_teacher: { course_id: @courses_teacher.course_id, end_date: @courses_teacher.end_date, start_date: @courses_teacher.start_date, teacher_id: @courses_teacher.teacher_id } }
     assert_redirected_to courses_teacher_url(@courses_teacher)
   end
 

@@ -69,6 +69,6 @@ class MaterialsRatingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def materials_rating_params
-      params.require(:materials_rating).permit(:id_student, :id_material, :rating)
+      params.require(:materials_rating).permit(:student_id, :material_id, :rating)
     end
 end

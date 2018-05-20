@@ -14,9 +14,9 @@ class MaterialsRatingsTest < ApplicationSystemTestCase
     visit materials_ratings_url
     click_on "New Materials Rating"
 
-    fill_in "Id Material", with: @materials_rating.id_material
-    fill_in "Id Student", with: @materials_rating.id_student
+    fill_in "Material", with: @materials_rating.material_id
     fill_in "Rating", with: @materials_rating.rating
+    fill_in "Student", with: @materials_rating.student_id
     click_on "Create Materials rating"
 
     assert_text "Materials rating was successfully created"
@@ -27,9 +27,9 @@ class MaterialsRatingsTest < ApplicationSystemTestCase
     visit materials_ratings_url
     click_on "Edit", match: :first
 
-    fill_in "Id Material", with: @materials_rating.id_material
-    fill_in "Id Student", with: @materials_rating.id_student
+    fill_in "Material", with: @materials_rating.material_id
     fill_in "Rating", with: @materials_rating.rating
+    fill_in "Student", with: @materials_rating.student_id
     click_on "Update Materials rating"
 
     assert_text "Materials rating was successfully updated"

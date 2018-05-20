@@ -5,8 +5,8 @@
 <table>
   <thead>
     <tr>
-      <th>Id teacher</th>
-      <th>Id subtopic</th>
+      <th>Teacher</th>
+      <th>Subtopic</th>
       <th>Description</th>
       <th>Url</th>
       <th>File</th>
@@ -18,8 +18,8 @@
   <tbody>
     <% @materials.each do |material| %>
       <tr>
-        <td><%= material.id_teacher %></td>
-        <td><%= material.id_subtopic %></td>
+        <td><%= material.teacher %></td>
+        <td><%= material.subtopic %></td>
         <td><%= material.description %></td>
         <td><%= material.url %></td>
         <td><%= material.file %></td>
