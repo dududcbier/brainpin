@@ -16,3 +16,5 @@ To run BrainPin, simply run the following command on the brainpin directory:
 $ docker-compose up
 $ docker-compose run web rake db:setup
 ```
+
+You can then access localhost:3000 on your browser to run our example database queries.
