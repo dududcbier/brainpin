@@ -6,6 +6,7 @@
   <thead>
     <tr>
       <th>Topic</th>
+      <th>Learnable</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -14,6 +15,7 @@
     <% @subtopics.each do |subtopic| %>
       <tr>
         <td><%= subtopic.topic %></td>
+        <td><%= subtopic.learnable %></td>
         <td><%= link_to 'Show', subtopic %></td>
         <td><%= link_to 'Edit', edit_subtopic_path(subtopic) %></td>
         <td><%= link_to 'Destroy', subtopic, method: :delete, data: { confirm: 'Are you sure?' } %></td>

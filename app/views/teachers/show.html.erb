@@ -1,13 +1,18 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Office:</strong>
+  <%= @teacher.office %>
+</p>
+
+<p>
   <strong>Coordinator:</strong>
   <%= @teacher.coordinator %>
 </p>
 
 <p>
-  <strong>Office:</strong>
-  <%= @teacher.office %>
+  <strong>Registrant:</strong>
+  <%= @teacher.registrant %>
 </p>
 
 <%= link_to 'Edit', edit_teacher_path(@teacher) %> |

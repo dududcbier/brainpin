@@ -20,7 +20,5 @@ Rails.application.routes.draw do
   resources :coordinators
   resources :avatars
   resources :avatar_requirements
-  resources :db_example
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root "db_example#index"
 end

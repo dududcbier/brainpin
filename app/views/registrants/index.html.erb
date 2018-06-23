@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>User</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -12,6 +13,7 @@
   <tbody>
     <% @registrants.each do |registrant| %>
       <tr>
+        <td><%= registrant.user %></td>
         <td><%= link_to 'Show', registrant %></td>
         <td><%= link_to 'Edit', edit_registrant_path(registrant) %></td>
         <td><%= link_to 'Destroy', registrant, method: :delete, data: { confirm: 'Are you sure?' } %></td>

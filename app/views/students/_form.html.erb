@@ -11,6 +11,19 @@
     </div>
   <% end %>
 
+  <%= form.fields_for :user do |user_form| %>
+    <%= user_form.label :name %>
+    <%= user_form.text_field :name %>
+    <%= user_form.label :password %>
+    <%= user_form.text_field :password %>
+    <%= user_form.label :phone %>
+    <%= user_form.text_field :phone %>
+    <%= user_form.label :cpf %>
+    <%= user_form.text_field :cpf %>
+    <%= user_form.label :email %>
+    <%= user_form.text_field :email %>
+  <% end %>
+
   <div class="field">
     <%= form.label :interest %>
     <%= form.text_field :interest %>

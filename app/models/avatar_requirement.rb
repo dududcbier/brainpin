@@ -1,4 +1,4 @@
 class AvatarRequirement < ApplicationRecord
   belongs_to :avatar
-  belongs_to :learnable
+  has_one :learnable
 end

@@ -6,23 +6,14 @@
   <thead>
     <tr>
       <th>Registrant</th>
-      <th>difficulty</th>
-      <th>points</th>
-      <th>rating</th>
-      <th>text</th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @questions.each do |question| %>
-      <% question_mongo = @questions_mongo.find(question.question_id) %>
       <tr>
         <td><%= question.registrant %></td>
-        <td><%= question_mongo.difficulty %></td>
-        <td><%= question_mongo.points %></td>
-        <td><%= question_mongo.rating %></td>
-        <td><%= question_mongo.text %></td>
         <td><%= link_to 'Show', question %></td>
         <td><%= link_to 'Edit', edit_question_path(question) %></td>
         <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>

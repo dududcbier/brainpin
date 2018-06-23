@@ -5,7 +5,6 @@ class QuestionsController < ApplicationController
   # GET /questions.json
   def index
     @questions = Question.all
-    @questions_mongo = QuestionMongo.all
   end
 
   # GET /questions/1
@@ -16,7 +15,6 @@ class QuestionsController < ApplicationController
   # GET /questions/new
   def new
     @question = Question.new
-    @question_mongo = QuestionsMongo.new
   end
 
   # GET /questions/1/edit
@@ -27,7 +25,6 @@ class QuestionsController < ApplicationController
   # POST /questions.json
   def create
     @question = Question.new(question_params)
-    @question_mongo = QuestionsMongo.new
 
     respond_to do |format|
       if @question.save

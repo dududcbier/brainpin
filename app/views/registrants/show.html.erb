@@ -1,4 +1,9 @@
 <p id="notice"><%= notice %></p>
 
+<p>
+  <strong>User:</strong>
+  <%= @registrant.user %>
+</p>
+
 <%= link_to 'Edit', edit_registrant_path(@registrant) %> |
 <%= link_to 'Back', registrants_path %>

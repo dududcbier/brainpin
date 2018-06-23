@@ -11,14 +11,28 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :coordinator_id %>
-    <%= form.text_field :coordinator_id %>
-  </div>
+  <%= form.fields_for :registrant do |registrant_form| %>
+    <%= registrant_form.fields_for :user do |user_form| %>
+      <%= user_form.label :name %>
+      <%= user_form.text_field :name %>
+      <%= user_form.label :password %>
+      <%= user_form.text_field :password %>
+      <%= user_form.label :phone %>
+      <%= user_form.text_field :phone %>
+      <%= user_form.label :cpf %>
+      <%= user_form.text_field :cpf %>
+      <%= user_form.label :email %>
+      <%= user_form.text_field :email %>
+    <% end %>
+  <% end %>
 
   <div class="field">
     <%= form.label :office %>
     <%= form.text_field :office %>
+  </div>
+
+  <div class="field">
+    <%= form.collection_select :coordinator_id, Coordinator.order(:id), :id, :registrant_id, include_blank: true %>
   </div>
 
   <div class="actions">

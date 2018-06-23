@@ -15,6 +15,7 @@ class RegistrantsController < ApplicationController
   # GET /registrants/new
   def new
     @registrant = Registrant.new
+    @registrant.build_user
   end
 
   # GET /registrants/1/edit
@@ -69,6 +70,6 @@ class RegistrantsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def registrant_params
-      params.fetch(:registrant, {})
+      params.require(:registrant).permit(:user_id, user_attributes: [:name, :password, :phone, :cpf, :email])
     end
 end
