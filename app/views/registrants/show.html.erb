@@ -1,9 +1,22 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>User:</strong>
-  <%= @registrant.user %>
-</p>
+<strong>User:</strong>
+<table>
+  <tr>
+    <td> NOME </td>
+    <td> TELEFONE </td>
+    <td> CPF </td>
+    <td> E-MAIL </td>
+  </tr>
+
+  <tr>
+		<td><%= @registrant.user.name %></td>
+		<td><%= @registrant.user.phone %></td>
+		<td><%= @registrant.user.cpf %></td>
+		<td><%= @registrant.user.email %></td>
+	</tr>
+</table>
+
 
 <%= link_to 'Edit', edit_registrant_path(@registrant) %> |
 <%= link_to 'Back', registrants_path %>

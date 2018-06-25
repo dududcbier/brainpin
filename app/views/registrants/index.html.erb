@@ -11,9 +11,19 @@
   </thead>
 
   <tbody>
+    <tr>
+      <td> NOME </td>
+      <td> TELEFONE </td>
+      <td> CPF </td>
+      <td> E-MAIL </td>
+      <td colspan="3"> </td>
+    </tr>
     <% @registrants.each do |registrant| %>
       <tr>
-        <td><%= registrant.user %></td>
+        <td><%= registrant.user.name %></td>
+        <td><%= registrant.user.phone %></td>
+        <td><%= registrant.user.cpf %></td>
+        <td><%= registrant.user.email %></td>
         <td><%= link_to 'Show', registrant %></td>
         <td><%= link_to 'Edit', edit_registrant_path(registrant) %></td>
         <td><%= link_to 'Destroy', registrant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
