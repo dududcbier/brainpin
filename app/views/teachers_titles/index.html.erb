@@ -14,7 +14,7 @@
   <tbody>
     <% @teachers_titles.each do |teachers_title| %>
       <tr>
-        <td><%= teachers_title.teacher %></td>
+        <td><%= teachers_title.teacher.registrant.user.name  %></td>
         <td><%= teachers_title.title %></td>
         <td><%= link_to 'Show', teachers_title %></td>
         <td><%= link_to 'Edit', edit_teachers_title_path(teachers_title) %></td>

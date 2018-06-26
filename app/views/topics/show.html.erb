@@ -1,13 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Course:</strong>
-  <%= @topic.course %>
-</p>
-
-<p>
   <strong>Learnable:</strong>
-  <%= @topic.learnable %>
+  <%= @topic.learnable.name %>
 </p>
 
 <%= link_to 'Edit', edit_topic_path(@topic) %> |

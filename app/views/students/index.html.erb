@@ -19,7 +19,7 @@
         <td><%= student.interest %></td>
         <td><%= student.school_year %></td>
         <td><%= student.birth_date %></td>
-        <td><%= student.user %></td>
+        <td><%= student.user.name  %></td>
         <td><%= link_to 'Show', student %></td>
         <td><%= link_to 'Edit', edit_student_path(student) %></td>
         <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
