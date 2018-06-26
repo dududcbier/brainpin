@@ -5,17 +5,15 @@
 <table>
   <thead>
     <tr>
-      <th>Coordinator</th>
       <th>Name</th>
       <th>Max level</th>
       <th colspan="3"></th>
     </tr>
   </thead>
-
+  
   <tbody>
     <% @learnables.each do |learnable| %>
       <tr>
-        <td><%= learnable.coordinator %></td>
         <td><%= learnable.name %></td>
         <td><%= learnable.max_level %></td>
         <td><%= link_to 'Show', learnable %></td>

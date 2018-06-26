@@ -31,9 +31,7 @@
     <%= form.text_field :office %>
   </div>
 
-  <div class="field">
-    <%= form.collection_select :coordinator_id, Coordinator.order(:id), :id, :registrant_id, include_blank: true %>
-  </div>
+
 
   <div class="actions">
     <%= form.submit %>

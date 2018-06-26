@@ -6,7 +6,6 @@
   <thead>
     <tr>
       <th>Office</th>
-      <th>Coordinator</th>
       <th>Registrant</th>
       <th colspan="3"></th>
     </tr>
@@ -16,8 +15,7 @@
     <% @teachers.each do |teacher| %>
       <tr>
         <td><%= teacher.office %></td>
-        <td><%= teacher.coordinator %></td>
-        <td><%= teacher.registrant %></td>
+        <td><%= teacher.registrant.user.name %></td>
         <td><%= link_to 'Show', teacher %></td>
         <td><%= link_to 'Edit', edit_teacher_path(teacher) %></td>
         <td><%= link_to 'Destroy', teacher, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -1,5 +1,4 @@
 class Teacher < ApplicationRecord
-  belongs_to :coordinator
   belongs_to :registrant, dependent: :destroy
   has_many :teachers_title
   accepts_nested_attributes_for :registrant

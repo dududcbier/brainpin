@@ -5,14 +5,10 @@
   <%= @teacher.office %>
 </p>
 
-<p>
-  <strong>Coordinator:</strong>
-  <%= @teacher.coordinator %>
-</p>
 
 <p>
   <strong>Registrant:</strong>
-  <%= @teacher.registrant %>
+  <%= @teacher.registrant.user.name %>
 </p>
 
 <%= link_to 'Edit', edit_teacher_path(@teacher) %> |
