@@ -16,8 +16,8 @@
         <nav>
           <ul class="nav navbar-nav navbar-right">
             <li><%= link_to "Home",   root_path %></li>
-            <li><%= link_to "Materials",   materials_path %></li>
             <% if logged_in? %>
+              <li><%= link_to "Materials",   materials_path %></li>
               <% if is_teacher? %>
                 <li><%= link_to "My Questions",   my_questions_path %></li>
               <% end %>

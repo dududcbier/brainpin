@@ -26,10 +26,11 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
   get '/my_questions', to: 'mongo_questions#index'
-  get  'static_pages/home'
+  get  'static_pages/home', to: 'static_pages#index'
   root 'static_pages#home'
   post '/mongo_questions/push_wrong_answer', to: 'mongo_questions#push_wrong_answer'
   get '/materials', to: 'materials#index'
   get 'sign_up_student', to: 'students#new'
   get 'sign_up_teacher', to: 'teachers#new'
+  post 'create_post', to: 'static_pages#create_post'
 end
