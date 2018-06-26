@@ -16,14 +16,14 @@
     <%= form.number_field :difficulty %>
   </div>
 
+  <strong><p>Topics</p></strong>
+  <% @all_topics.each do |topic| %>
+    <%= form.check_box(:topics, { :multiple => true }, topic.id, nil) %> <%= topic.learnable.name %>
+  <% end %>
+
   <div class="field">
     <%= form.label :points %>
     <%= form.number_field :points %>
-  </div>
-
-  <div class="field">
-    <%= form.label :rating %>
-    <%= form.number_field :rating %>
   </div>
 
   <div class="field">
@@ -31,14 +31,14 @@
     <%= form.text_field :text %>
   </div>
 
-  Right Answer:
+  <strong>Right Answer:</strong>
 
   <%= form.fields_for :right_answer do |right_answer_form| %>
     <%= right_answer_form.label :text %>
     <%= right_answer_form.text_field :text %>
   <% end %>
 
-  <p>Wrong Answers:</p>
+  <strong><p>Wrong Answers:</p></strong>
 
   <div class="field">
     <%= form.fields_for :wrong_answers do |builder| %>

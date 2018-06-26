@@ -23,6 +23,8 @@ class MongoQuestionsController < ApplicationController
     @mongo_question = MongoQuestion.new
     @mongo_question.build_right_answer
     @mongo_question.wrong_answers.build
+
+    @all_topics = Topic.all
   end
 
   # GET /mongo_questions/1/edit
@@ -33,7 +35,7 @@ class MongoQuestionsController < ApplicationController
   # POST /mongo_questions.json
   def create
     @mongo_question = MongoQuestion.new(mongo_question_params)
-
+    @mongo_question.topics = params['mongo_question']['topics']
     respond_to do |format|
       if @mongo_question.save
         format.html { redirect_to @mongo_question, notice: 'Mongo question was successfully created.' }
@@ -79,6 +81,6 @@ class MongoQuestionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def mongo_question_params
-      params.require(:mongo_question).permit(:difficulty, :points, :rating, :text, right_answer_attributes: [:text], wrong_answers_attributes: [:text, :plausibility])
+      params.require(:mongo_question).permit(:difficulty, :points, :text, :topics, right_answer_attributes: [:text], wrong_answers_attributes: [:text, :plausibility])
     end
 end
