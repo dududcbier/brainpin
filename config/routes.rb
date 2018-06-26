@@ -29,4 +29,7 @@ Rails.application.routes.draw do
   get  'static_pages/home'
   root 'static_pages#home'
   post '/mongo_questions/push_wrong_answer', to: 'mongo_questions#push_wrong_answer'
+  get '/materials', to: 'materials#index'
+  get 'sign_up_student', to: 'students#new'
+  get 'sign_up_teacher', to: 'teachers#new'
 end

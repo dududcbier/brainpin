@@ -25,6 +25,7 @@ class MaterialsController < ApplicationController
   # POST /materials.json
   def create
     @material = Material.new(material_params)
+    @material.teacher_id = current_teacher_id
 
     respond_to do |format|
       if @material.save

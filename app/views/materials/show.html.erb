@@ -30,5 +30,7 @@
   <%= @material.rating %>
 </p>
 
-<%= link_to 'Edit', edit_material_path(@material) %> |
+<% if is_teacher? %>
+  <%= link_to 'Edit', edit_material_path(@material) %> |
+<% end %>
 <%= link_to 'Back', materials_path %>

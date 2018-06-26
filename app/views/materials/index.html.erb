@@ -25,13 +25,16 @@
         <td><%= material.file %></td>
         <td><%= material.rating %></td>
         <td><%= link_to 'Show', material %></td>
-        <td><%= link_to 'Edit', edit_material_path(material) %></td>
-        <td><%= link_to 'Destroy', material, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if is_teacher? %>
+          <td><%= link_to 'Edit', edit_material_path(material) %></td>
+          <td><%= link_to 'Destroy', material, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Material', new_material_path %>
+<% if is_teacher? %>
+  <%= link_to 'New Material', new_material_path %>
+<% end %>

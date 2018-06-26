@@ -12,6 +12,12 @@
       <%= f.password_field :password, class: 'form-control' %>
 
       <%= f.submit "Log in", class: "btn btn-primary" %>
+      <p>
+      	<%= link_to 'Student? Sign up here!', sign_up_student_path %>
+  	  </p>
+  	  <p>
+      	<%= link_to 'Teacher? Sign up here!', sign_up_teacher_path %>
+      </p>
     <% end %>
 
   </div>

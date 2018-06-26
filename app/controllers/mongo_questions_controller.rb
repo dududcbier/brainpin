@@ -29,6 +29,7 @@ class MongoQuestionsController < ApplicationController
 
   # GET /mongo_questions/1/edit
   def edit
+    @all_topics = Topic.all
   end
 
   # POST /mongo_questions

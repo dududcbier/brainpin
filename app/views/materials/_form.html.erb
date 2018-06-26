@@ -12,13 +12,8 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :teacher_id %>
-    <%= form.text_field :teacher_id %>
-  </div>
-
-  <div class="field">
     <%= form.label :subtopic_id %>
-    <%= form.text_field :subtopic_id %>
+    <%= form.collection_select :subtopic_id, Subtopic.order(:id), :id, :id, include_blank: true %>
   </div>
 
   <div class="field">
