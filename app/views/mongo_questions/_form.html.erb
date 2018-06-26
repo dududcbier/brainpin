@@ -1,0 +1,45 @@
+<%= form_with(model: mongo_question, local: true) do |form| %>
+  <% if mongo_question.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(mongo_question.errors.count, "error") %> prohibited this mongo_question from being saved:</h2>
+
+      <ul>
+      <% mongo_question.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :difficulty %>
+    <%= form.number_field :difficulty %>
+  </div>
+
+  <div class="field">
+    <%= form.label :points %>
+    <%= form.number_field :points %>
+  </div>
+
+  <div class="field">
+    <%= form.label :rating %>
+    <%= form.number_field :rating %>
+  </div>
+
+  <div class="field">
+    <%= form.label :text %>
+    <%= form.text_field :text %>
+  </div>
+
+  Right Answer:
+
+  <%= form.fields_for :right_answer do |right_answer_form| %>
+    <%= right_answer_form.label :text %>
+    <%= right_answer_form.text_field :text %>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+
+<% end %>

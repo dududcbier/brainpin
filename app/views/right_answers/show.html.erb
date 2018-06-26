@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Text:</strong>
+  <%= @right_answer.text %>
+</p>
+
+<p>
+  <strong>Solutions:</strong>
+  <%= @right_answer.solutions %>
+</p>
+
+<%= link_to 'Edit', edit_right_answer_path(@right_answer) %> |
+<%= link_to 'Back', right_answers_path %>

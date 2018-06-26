@@ -1,0 +1,27 @@
+<%= form_with(model: right_answer, local: true) do |form| %>
+  <% if right_answer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(right_answer.errors.count, "error") %> prohibited this right_answer from being saved:</h2>
+
+      <ul>
+      <% right_answer.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :text %>
+    <%= form.text_field :text %>
+  </div>
+
+  <div class="field">
+    <%= form.label :solutions_id %>
+    <%= form.text_field :solutions_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

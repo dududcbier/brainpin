@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Difficulty:</strong>
+  <%= @mongo_question.difficulty %>
+</p>
+
+<p>
+  <strong>Points:</strong>
+  <%= @mongo_question.points %>
+</p>
+
+<p>
+  <strong>Rating:</strong>
+  <%= @mongo_question.rating %>
+</p>
+
+<p>
+  <strong>Text:</strong>
+  <%= @mongo_question.text %>
+</p>
+
+<%= link_to 'Edit', edit_mongo_question_path(@mongo_question) %> |
+<%= link_to 'Back', mongo_questions_path %>

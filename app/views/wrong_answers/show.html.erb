@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Text:</strong>
+  <%= @wrong_answer.text %>
+</p>
+
+<p>
+  <strong>Plausibility:</strong>
+  <%= @wrong_answer.plausibility %>
+</p>
+
+<%= link_to 'Edit', edit_wrong_answer_path(@wrong_answer) %> |
+<%= link_to 'Back', wrong_answers_path %>

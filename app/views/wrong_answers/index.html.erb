@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Wrong Answers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Text</th>
+      <th>Plausibility</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @wrong_answers.each do |wrong_answer| %>
+      <tr>
+        <td><%= wrong_answer.text %></td>
+        <td><%= wrong_answer.plausibility %></td>
+        <td><%= link_to 'Show', wrong_answer %></td>
+        <td><%= link_to 'Edit', edit_wrong_answer_path(wrong_answer) %></td>
+        <td><%= link_to 'Destroy', wrong_answer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Wrong Answer', new_wrong_answer_path %>

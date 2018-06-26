@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  get 'sessions/new'
+  resources :posts
+  resources :comments
+  resources :wrong_answers
+  resources :right_answers
+  resources :solutions
+  resources :mongo_questions
   resources :users
   resources :topics
   resources :teachers_titles
@@ -21,4 +28,9 @@ Rails.application.routes.draw do
   resources :avatars
   resources :avatar_requirements
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get '/login', to: 'sessions#new'
+  post '/login', to: 'sessions#create'
+  delete '/logout', to: 'sessions#destroy'
+  get  'static_pages/home'
+  root 'static_pages#home'
 end

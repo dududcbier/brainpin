@@ -1,0 +1,2 @@
+module MongoQuestionsHelper
+end
