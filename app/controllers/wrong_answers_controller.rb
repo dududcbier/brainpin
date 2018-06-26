@@ -14,7 +14,8 @@ class WrongAnswersController < ApplicationController
 
   # GET /wrong_answers/new
   def new
-    @wrong_answer = WrongAnswer.new
+    @mongo_question = MongoQuestion.find(params[:mongo_question_id])
+    @wrong_answer = @mongo_question.wrong_answers.build
   end
 
   # GET /wrong_answers/1/edit
@@ -24,7 +25,8 @@ class WrongAnswersController < ApplicationController
   # POST /wrong_answers
   # POST /wrong_answers.json
   def create
-    @wrong_answer = WrongAnswer.new(wrong_answer_params)
+    @mongo_question = MongoQuestion.find(params[:mongo_question_id])
+    @wrong_answer = @mongo_question.wrong_answers.build(params[:wrong_answer])
 
     respond_to do |format|
       if @wrong_answer.save

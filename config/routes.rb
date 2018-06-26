@@ -2,10 +2,10 @@ Rails.application.routes.draw do
   get 'sessions/new'
   resources :posts
   resources :comments
-  resources :wrong_answers
   resources :right_answers
   resources :solutions
   resources :mongo_questions
+  resources :wrong_answers
   resources :users
   resources :topics
   resources :teachers_titles
@@ -25,6 +25,8 @@ Rails.application.routes.draw do
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
+  get '/my_questions', to: 'mongo_questions#index'
   get  'static_pages/home'
   root 'static_pages#home'
+  post '/mongo_questions/push_wrong_answer', to: 'mongo_questions#push_wrong_answer'
 end
