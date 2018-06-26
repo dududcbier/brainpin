@@ -4,7 +4,13 @@ class MongoQuestionsController < ApplicationController
   # GET /mongo_questions
   # GET /mongo_questions.json
   def index
-    @mongo_questions = MongoQuestion.all
+    if is_teacher?
+      @questions = Question.where registrant_id: current_registrant_id
+      @mongo_questions = MongoQuestion.in(_id: @questions.collect {|q| q.mongo_id})
+    else 
+      @questions = []
+      @mongo_questions = []
+    end
   end
 
   # GET /mongo_questions/1
@@ -37,6 +43,8 @@ class MongoQuestionsController < ApplicationController
         format.json { render json: @mongo_question.errors, status: :unprocessable_entity }
       end
     end
+
+    Question.create mongo_id: @mongo_question._id, registrant_id: current_registrant_id
   end
 
   # PATCH/PUT /mongo_questions/1

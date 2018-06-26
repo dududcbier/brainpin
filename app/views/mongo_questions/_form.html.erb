@@ -38,8 +38,33 @@
     <%= right_answer_form.text_field :text %>
   <% end %>
 
+  <p>Wrong Answers:</p>
+
+  <div class="field">
+    <%= form.fields_for :wrong_answers do |builder| %>
+      <%= render "wrong_answer_fields", :form => builder %>
+    <% end %>
+  </div>
+  <div class="field">
+    <%= form.fields_for :wrong_answers do |builder| %>
+      <%= render "wrong_answer_fields", :form => builder %>
+    <% end %>
+  </div>
+  <div class="field">
+    <%= form.fields_for :wrong_answers do |builder| %>
+      <%= render "wrong_answer_fields", :form => builder %>
+    <% end %>
+  </div>
+  <div class="field">
+    <%= form.fields_for :wrong_answers do |builder| %>
+      <%= render "wrong_answer_fields", :form => builder %>
+    <% end %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
 
 <% end %>
+<%= render @mongo_question.wrong_answers %>
+

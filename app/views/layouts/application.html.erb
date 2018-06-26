@@ -17,6 +17,9 @@
           <ul class="nav navbar-nav navbar-right">
             <li><%= link_to "Home",   root_path %></li>
             <% if logged_in? %>
+              <% if is_teacher? %>
+                <li><%= link_to "My Questions",   my_questions_path %></li>
+              <% end %>
               <!-- <ul class="dropdown-menu">
                 <li><%= link_to "Profile", current_user %></li>
                 <li class="divider"></li> -->
