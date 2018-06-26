@@ -71,6 +71,6 @@ class MongoQuestionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def mongo_question_params
-      params.require(:mongo_question).permit(:difficulty, :points, :rating, :text, right_answer_attributes: [:text], wrong_answers_attributes: [:text, :plausibility])
+      params.require(:mongo_question).permit(:difficulty, :points, :text, right_answer_attributes: [:text], wrong_answers_attributes: [:text, :plausibility])
     end
 end

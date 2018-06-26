@@ -17,7 +17,6 @@ Rails.application.routes.draw do
   resources :student_levels
   resources :registrants
   resources :questions_study_sessions
-  resources :questions
   resources :materials
   resources :learnables
   resources :courses_teachers

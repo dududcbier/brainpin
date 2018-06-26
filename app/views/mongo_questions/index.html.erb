@@ -7,7 +7,6 @@
     <tr>
       <th>Difficulty</th>
       <th>Points</th>
-      <th>Rating</th>
       <th>Text</th>
       <th colspan="3"></th>
     </tr>
@@ -18,7 +17,6 @@
       <tr>
         <td><%= mongo_question.difficulty %></td>
         <td><%= mongo_question.points %></td>
-        <td><%= mongo_question.rating %></td>
         <td><%= mongo_question.text %></td>
         <td><%= link_to 'Show', mongo_question %></td>
         <td><%= link_to 'Edit', edit_mongo_question_path(mongo_question) %></td>

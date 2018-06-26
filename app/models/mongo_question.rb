@@ -2,7 +2,6 @@ class MongoQuestion
   include Mongoid::Document
   field :difficulty, type: Integer
   field :points, type: Integer
-  field :rating, type: Integer
   field :text, type: String
 
   after_save :create_question
