@@ -10,5 +10,3 @@ users = User.create([{name: "Harry Potter", password: "senha", phone: "12345678"
 				])
 
 registrant = Registrant.create(user_id: users.last.id)
-
-coordinator = Coordinator.create(registrant_id: registrant.id)
