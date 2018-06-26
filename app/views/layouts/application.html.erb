@@ -10,6 +10,32 @@
   </head>
 
   <body>
-    <%= yield %>
+    <header class="navbar navbar-fixed-top navbar-inverse">
+      <div class="container">
+        <%= link_to "Brainpin", '#', id: "logo" %>
+        <nav>
+          <ul class="nav navbar-nav navbar-right">
+            <li><%= link_to "Home",   root_path %></li>
+            <% if logged_in? %>
+              <!-- <ul class="dropdown-menu">
+                <li><%= link_to "Profile", current_user %></li>
+                <li class="divider"></li> -->
+                <li>
+                  <%= link_to "Log out", logout_path, method: :delete %>
+                </li>
+              <!-- </ul> -->
+            <% else %>
+              <li><%= link_to "Log in", login_path %></li>
+            <% end %>
+        </ul>
+        </nav>
+      </div>
+    </header>
+    <% flash.each do |message_type, message| %>
+        <div class="alert alert-<%= message_type %>"><%= message %></div>
+    <% end %>
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>
