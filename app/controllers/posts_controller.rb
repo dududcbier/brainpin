@@ -10,6 +10,7 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
+    @comment = Comment.new
   end
 
   # GET /posts/new
@@ -60,6 +61,12 @@ class PostsController < ApplicationController
       format.html { redirect_to root_url, notice: 'Post was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def comment
+    @post = Post.find(params['comment']['post_id'])
+    @post.comments.push(Comment.new text: params['comment']['text'], created_by: current_user.id)
+    redirect_to @post
   end
 
   private

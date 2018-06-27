@@ -14,9 +14,9 @@
 	<table>
 	  <thead>
 	    <tr>
-	      <th>User</th>
-	      <th>Text</th>
-	      <th colspan="2"></th>
+	      <th>User </th>
+	      <th> Text</th>
+	      <th colspan="3"></th>
 	    </tr>
 	  </thead>
 
@@ -25,6 +25,7 @@
 	      <tr>
 	      	<td><%= post.created_by %></td>
 	        <td><%= post.text %></td>
+	        <td><%= link_to 'Show', post %></td>
 	        <% if current_user.id.to_i == post.created_by.to_i %>
 	        	<td><%= link_to 'Edit', edit_post_path(post) %></td>
 	        	<td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
