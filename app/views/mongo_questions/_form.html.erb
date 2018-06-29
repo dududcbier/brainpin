@@ -16,9 +16,9 @@
     <%= form.number_field :difficulty %>
   </div>
 
-  <strong><p>Topics</p></strong>
-  <% @all_topics.each do |topic| %>
-    <%= form.check_box(:topics, { :multiple => true }, topic.name, nil) %> <%= topic.learnable.name %>
+  <strong><p>Subtopics</p></strong>
+  <% Subtopic.all.each do |subtopic| %>
+    <%= form.check_box(:topics, { :multiple => true }, subtopic.name, nil) %> <%= subtopic.learnable.name %>
   <% end %>
 
   <div class="field">

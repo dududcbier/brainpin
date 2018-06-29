@@ -23,13 +23,10 @@ class MongoQuestionsController < ApplicationController
     @mongo_question = MongoQuestion.new
     @mongo_question.build_right_answer
     @mongo_question.wrong_answers.build
-
-    @all_topics = Topic.all
   end
 
   # GET /mongo_questions/1/edit
   def edit
-    @all_topics = Topic.all
   end
 
   # POST /mongo_questions
@@ -67,6 +64,7 @@ class MongoQuestionsController < ApplicationController
   # DELETE /mongo_questions/1
   # DELETE /mongo_questions/1.json
   def destroy
+    @question.destroy
     @mongo_question.destroy
     respond_to do |format|
       format.html { redirect_to mongo_questions_url, notice: 'Mongo question was successfully destroyed.' }
@@ -78,6 +76,7 @@ class MongoQuestionsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_mongo_question
       @mongo_question = MongoQuestion.find(params[:id])
+      @question = Question.find_by_mongo_id(@mongo_question.id.to_s)
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
