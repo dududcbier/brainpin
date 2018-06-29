@@ -18,7 +18,7 @@
 
   <strong><p>Subtopics</p></strong>
   <% Subtopic.all.each do |subtopic| %>
-    <%= form.check_box(:topics, { :multiple => true }, subtopic.name, nil) %> <%= subtopic.learnable.name %>
+    <%= form.check_box(:topics, { :multiple => true }, subtopic.id, nil) %> <%= subtopic.learnable.name %>
   <% end %>
 
   <div class="field">
