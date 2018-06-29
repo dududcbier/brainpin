@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= form.label :subtopic_id %>
-    <%= form.collection_select :subtopic_id, Subtopic.order(:id), :id, :id, include_blank: true %>
+    <%= form.collection_select :subtopic_id, Subtopic.all, :id, :name, include_blank: "Please select" %>
   </div>
 
   <div class="field">

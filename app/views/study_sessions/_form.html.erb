@@ -10,34 +10,12 @@
       </ul>
     </div>
   <% end %>
+    
+  <%= form.label :subtopic_id %>
+  <%= form.collection_select :subtopic_id, Subtopic.all, :id, :name, include_blank: "Please select" %>
 
   <div class="field">
-    <%= form.label :start_date %>
-    <%= form.date_select :start_date %>
-  </div>
-
-  <div class="field">
-    <%= form.label :student_id %>
-    <%= form.text_field :student_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :subtopic_id %>
-    <%= form.text_field :subtopic_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :end_date %>
-    <%= form.date_select :end_date %>
-  </div>
-
-  <div class="field">
-    <%= form.label :num_correct %>
-    <%= form.number_field :num_correct %>
-  </div>
-
-  <div class="field">
-    <%= form.label :num_questions %>
+    <%= form.label :number_of_questions %>
     <%= form.number_field :num_questions %>
   </div>
 

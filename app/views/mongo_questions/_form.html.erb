@@ -18,7 +18,7 @@
 
   <strong><p>Topics</p></strong>
   <% @all_topics.each do |topic| %>
-    <%= form.check_box(:topics, { :multiple => true }, topic.id, nil) %> <%= topic.learnable.name %>
+    <%= form.check_box(:topics, { :multiple => true }, topic.name, nil) %> <%= topic.learnable.name %>
   <% end %>
 
   <div class="field">

@@ -25,7 +25,8 @@ class StudySessionsController < ApplicationController
   # POST /study_sessions.json
   def create
     @study_session = StudySession.new(study_session_params)
-
+    @study_session.student_id = current_student_id
+    @study_session.start_date = Time.now
     respond_to do |format|
       if @study_session.save
         format.html { redirect_to @study_session, notice: 'Study session was successfully created.' }
