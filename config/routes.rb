@@ -34,4 +34,5 @@ Rails.application.routes.draw do
   get 'sign_up_teacher', to: 'teachers#new'
   post 'create_post', to: 'static_pages#create_post'
   post 'comment', to: 'posts#comment'
+  post '/study_sessions/:id', to: 'study_sessions#submit_answers'
 end

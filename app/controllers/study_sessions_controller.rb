@@ -10,6 +10,9 @@ class StudySessionsController < ApplicationController
   # GET /study_sessions/1
   # GET /study_sessions/1.json
   def show
+    @questions = QuestionsStudySession.where(study_session_id: @study_session.id)
+    @questions = Question.where(id: @questions.pluck(:question_id))
+    @questions = MongoQuestion.find(@questions.pluck(:mongo_id))
   end
 
   # GET /study_sessions/new
@@ -29,13 +32,13 @@ class StudySessionsController < ApplicationController
     @study_session.start_date = Time.now
     @mongo_questions = MongoQuestion.where(:topics.in => [@study_session.subtopic_id.to_s])
     @questions = Question.where(mongo_id: @mongo_questions.pluck(:_id).map{|q| q.to_s}).
-                          order("RANDOM()").
-                          limit(@study_session.num_questions)
-    @questions.each do |q|
-      @questions_study_session = QuestionsStudySession.create question_id: q.id, study_session_id: @study_session.id
-    end
+                          order(Arel.sql("RANDOM()")).
+                          limit(@study_session.num_questions).to_a
     respond_to do |format|
       if @study_session.save
+        @questions.each do |q|
+          QuestionsStudySession.create! question_id: q.id, study_session_id: @study_session.id
+        end
         format.html { redirect_to @study_session, notice: 'Study session was successfully created.' }
         format.json { render :show, status: :created, location: @study_session }
       else
@@ -67,6 +70,20 @@ class StudySessionsController < ApplicationController
       format.html { redirect_to study_sessions_url, notice: 'Study session was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def submit_answers
+    @study_session = StudySession.find(params[:id])
+    if @study_session.end_date.nil?
+      count = 0
+      for i in 1..@study_session.num_questions 
+        if params["answer" + i.to_s].to_s == "RightAnswer"
+          count += 1
+        end
+      end
+      @study_session.update(num_correct: count, end_date: Time.now)
+    end
+    redirect_to study_sessions_url
   end
 
   private

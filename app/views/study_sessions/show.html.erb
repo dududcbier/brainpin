@@ -1,34 +1,31 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Start date:</strong>
-  <%= @study_session.start_date %>
-</p>
-
-<p>
-  <strong>Student:</strong>
-  <%= @study_session.student %>
-</p>
-
-<p>
   <strong>Subtopic:</strong>
-  <%= @study_session.subtopic %>
+  <%= @study_session.subtopic.name %>
 </p>
 
-<p>
-  <strong>End date:</strong>
-  <%= @study_session.end_date %>
-</p>
+<%= form_tag do %>
+  <% @questions.each_with_index do |q, i| %>
+    <p>
+      <strong>Question <%= i + 1 %></strong>
+    </p>
+    <p>  
+      <%= q.text %>
+    </p>
+    <% answers = q.wrong_answers %>
+    <% answers.push(q.right_answer) %>
+    <%= hidden_field_tag "question#{i+1}", q.id  %>
+    <table>
+        <% answers.shuffle.each do |ans| %>
+        <tr>
+          <td><%= radio_button_tag "answer#{i+1}", ans.class %></td><td> <%= label_tag :answer, ans.text %></td>
+        </tr>
+        <% end %>
+    </table>
+  <% end %>
+  <%= hidden_field_tag 'id', @study_session.id  %>
+  <%= submit_tag("Submit", class: "btn btn-large btn-primary") %>
+<% end %>  
 
-<p>
-  <strong>Num correct:</strong>
-  <%= @study_session.num_correct %>
-</p>
-
-<p>
-  <strong>Num questions:</strong>
-  <%= @study_session.num_questions %>
-</p>
-
-<%= link_to 'Edit', edit_study_session_path(@study_session) %> |
-<%= link_to 'Back', study_sessions_path %>
+<%= link_to 'Back', :back %>

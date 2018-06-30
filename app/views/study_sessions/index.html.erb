@@ -11,7 +11,7 @@
       <th>End date</th>
       <th>Num correct</th>
       <th>Num questions</th>
-      <th colspan="3"></th>
+      <th colspan="2"></th>
     </tr>
   </thead>
 
@@ -24,8 +24,9 @@
         <td><%= study_session.end_date %></td>
         <td><%= study_session.num_correct %></td>
         <td><%= study_session.num_questions %></td>
-        <td><%= link_to 'Show', study_session %></td>
-        <td><%= link_to 'Edit', edit_study_session_path(study_session) %></td>
+        <% if study_session.end_date.nil? %>
+         <td><%= link_to 'Study', study_session %></td>
+        <% end %>
         <td><%= link_to 'Destroy', study_session, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
